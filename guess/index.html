@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Non-Intutive Guessing Game</title>
+		<link type="text/css" href="../common/css/cupertino/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="../common/js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery-ui-1.8.16.custom.min.js"></script>
+
+ 		<script type="text/javascript" src="../common/js/guessing-game.js"></script>
+
+		<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px; background: #A7BCC9}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+		</style>
+
+		<style>
+		  .toggler { width: 500px; height: 70px; }
+		  #button { padding: .5em 1em; text-decoration: none; }
+		</style>
+
+		<style>
+		  .toggler-side { width: 500px; height: 70px; position:relative; left:600px; bottom:182px}
+		  #button { padding: .5em 1em; text-decoration: none; }
+		</style>
+	</head>
+	<body>
+	  <h1>Non-Intutive Guessing Game</h1>
+	  <p style="font-size: 1.5em; line-height: 1.5; margin: 1em 0; width: 1100px;">
+	    In this game, you choose two different numbers and keep them hidden from your opponent.
+	    Next, you allow your opponent to choose one of your numbers and look at its value. After looking at just one of your numbers, your opponent guesses whether the number she chose is greater or smaller than the hidden number.
+	    <br>
+	    <br>
+	    Hard as it may be to believe, there is a strategy called the
+	    <a href="http://www.ulb.ac.be/facs/sciences/math/perso/math-perso/PlayingATrick.pdf">Z-strategy</a>
+	    that your opponent can employ to skew the odds in her favor.
+	    This non-intutive strategy was discovered by Prof. Cover from Stanford University and the associated research notes can be found
+	    <a href="http://www.stanford.edu/~cover/papers/paper73.pdf">here.</a>
+	    <br>
+	    <br>
+
+            A program that plays Rock-Paper-Scissors based on learning human behavior is beautifully demonstrated <a href="http://www.nytimes.com/interactive/science/rock-paper-scissors.html">here.</a> The Z-strategy, on the other hand, is not based of learning human behavior.
+	    <br>
+	    <br>
+	    Don't believe me? Play a few games against your computer and see how it fares!
+  </p>
+
+	  <!-- First Number -->
+	  <p>
+	    <h2 class="demoHeaders">
+	      <label for="amount-one">Choose First Number:</label>
+	      <input type="text" id="amount-one" style="border:0; background-color: #A7BCC9;" />
+	    </h2>
+	  </p>
+	  <div id="slider-one" style="width: 1100px;"></div>
+
+
+	  <!-- Second Number -->
+	  <p>
+	    <h2 class="demoHeaders">
+	      <label for="amount-two">Choose Second Number:</label>
+	      <input type="text" id="amount-two" style="border:0; background-color: #A7BCC9;" />
+	    </h2>
+	  </p>
+	  <div id="slider-two" style="width: 1100px;"></div>
+
+	  <br>
+	  <br>
+
+	  <div class="play-game">
+	    <button>Play Game</button>
+	  </div>
+
+	  <br>
+	  <br>
+
+	  <div class="toggler">
+	    <div id="number-choice" class="ui-widget-content ui-corner-all">
+	      <h3 class="ui-widget-header ui-corner-all">Number Choice</h3>
+	      <p id="the-choice-p">
+      		Let the game begin...
+	      </p>
+	    </div>
+	  </div>
+
+	  <div class="toggler">
+	    <div id="the-guess" class="ui-widget-content ui-corner-all">
+	      <h3 class="ui-widget-header ui-corner-all">The Guess</h3>
+	      <p id="the-guess-p">
+      		Choose two numbers and click "Play Game"
+	      </p>
+	    </div>
+	  </div>
+
+	  <div class="toggler">
+	    <div id="the-verdict" class="ui-widget-content ui-corner-all">
+	      <h3 class="ui-widget-header ui-corner-all">The Verdict</h3>
+	      <p id="the-verdict-p">
+		Then watch the Statistics.
+	      </p>
+	    </div>
+	  </div>
+
+	  <div class="toggler-side">
+	    <div id="statistics" class="ui-widget-content ui-corner-all">
+	      <h3 class="ui-widget-header ui-corner-all" align="middle">Statistics</h3>
+	      <h1 align="middle"><pre id="the-stats-p"></pre></h1>
+    		<a href="http://en.wikipedia.org/wiki/File:God2-Sistine_Chapel.png">
+  		  <img src="../common/css/cupertino/images/man.jpg" align="left" width="100" height="100" />
+    		</a>
+    		<a href="http://machinarium.net/demo/">
+  		  <img src="../common/css/cupertino/images/machine.jpeg" align="right" width="100" height="100" />
+    		</a>
+	    </div>
+	  </div>
+    <div style="clear: both;"></div>
+	  <p>
+      This code running in this page is written using <a href="http://jashkenas.github.com/coffee-script/">Coffeescript</a> and <a href="http://jqueryui.com/">jQuery UI</a>. Also, there is no server side code and all of this is delivered as good old static content. The Coffeescript source file can be found <a href="../common/coffee/guessing-game.coffee">here</a>.
+    </p>
+<p>
+Since this implementation uses discrete values, one can argue that number 1 and 10000 should not be chosen as they give your opponent an advantage and then the argument can be continued to exhaus all the available numbers!
+</p>
+	</body>
+</html>

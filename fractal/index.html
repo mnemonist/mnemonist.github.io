@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Elango Ganesan's Personal Page</title>
+	<style type="text/css">
+		body { font:84% Tahoma,Verdana,sans-serif; background: #A7BCC9}
+	</style>
+    </head>
+    <h1>Real-Time Mandelbrot Fractal Zoomer(s)</h1>
+    <body>
+      <p>Use left and right mouse buttons to zoom in and out. Use middle button to pan.
+	<br>
+	<br>
+	<applet code=AnimateMandelbrot.class width=640 height=500>
+	  <param name=fps value=30>
+	</applet>
+
+      <p>I wrote the code for this back in 2003 when I was learning Java, partly based on the amazing C program<A HREF="http://wmi.math.u-szeged.hu/xaos/doku.php"> XaoS.</A>. 
+      <p>For a long time, the only real-time fractal zoomer that ran in the browser is the code that I wrote. 
+      <p>You can find the Java source <A HREF="AnimateMandelbrot.java">here.</A> 
+      <br>
+      <p>On Sep 17 2011, J.B. Langston III released a javascript port of XaoS. 
+      <p>I am a bit disappointed that I didn't get around to writing this in javascript, but Langston's work is lovely as shown below.
+<br>
+<br>
+<br>
+    <canvas id="canvas" width="640" height="480">
+    </canvas>
+    </body>
+    <script type="text/javascript" src="http://jblangston.com/xaos/xaos.js"></script>
+<br>
+<br>And <A HREF="http://jblangston.com/xaos/">here</A> is a link to his project page.
+</html>

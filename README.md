@@ -1,2 +1,2 @@
-# mnemonist.githum.io
+# mnemonist.github.io
 Homepage
